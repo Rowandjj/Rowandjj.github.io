@@ -84,15 +84,27 @@
 
 
 
-<meta name="description" content="好记性不如烂笔头">
-<meta property="og:type" content="website">
-<meta property="og:title" content="楚奕博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="FloatingActionButton源码解析背景FloatingActionButton（下文以fab代替）是android support design组件库中提供的一个视图控件，是material design设计中fab的官方实现。
+此控件的官方介绍如下：
+
+Floating action buttons are used for a promoted action. They are">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FloatingActionButton源码解析">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/FloatingActionButton源码解析/index.html">
 <meta property="og:site_name" content="楚奕博客">
-<meta property="og:description" content="好记性不如烂笔头">
+<meta property="og:description" content="FloatingActionButton源码解析背景FloatingActionButton（下文以fab代替）是android support design组件库中提供的一个视图控件，是material design设计中fab的官方实现。
+此控件的官方介绍如下：
+
+Floating action buttons are used for a promoted action. They are">
+<meta property="og:image" content="http://yoursite.com/media/01.png">
+<meta property="og:updated_time" content="2016-08-28T14:32:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="楚奕博客">
-<meta name="twitter:description" content="好记性不如烂笔头">
+<meta name="twitter:title" content="FloatingActionButton源码解析">
+<meta name="twitter:description" content="FloatingActionButton源码解析背景FloatingActionButton（下文以fab代替）是android support design组件库中提供的一个视图控件，是material design设计中fab的官方实现。
+此控件的官方介绍如下：
+
+Floating action buttons are used for a promoted action. They are">
+<meta name="twitter:image" content="http://yoursite.com/media/01.png">
 
 
 
@@ -113,9 +125,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/28/FloatingActionButton源码解析/"/>
 
-  <title> 楚奕博客 </title>
+  <title> FloatingActionButton源码解析 | 楚奕博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -146,9 +158,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -225,9 +235,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -247,10 +257,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/08/28/FloatingActionButton源码解析/" itemprop="url">
-                  FloatingActionButton源码解析
-                </a>
+                FloatingActionButton源码解析
               
             
           </h1>
@@ -286,6 +293,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
         </div>
       </header>
     
@@ -297,9 +309,7 @@
       
 
       
-        
-          
-            <h1 id="FloatingActionButton源码解析"><a href="#FloatingActionButton源码解析" class="headerlink" title="FloatingActionButton源码解析"></a>FloatingActionButton源码解析</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>FloatingActionButton（下文以fab代替）是android support design组件库中提供的一个视图控件，是material design设计中fab的官方实现。</p>
+        <h1 id="FloatingActionButton源码解析"><a href="#FloatingActionButton源码解析" class="headerlink" title="FloatingActionButton源码解析"></a>FloatingActionButton源码解析</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>FloatingActionButton（下文以fab代替）是android support design组件库中提供的一个视图控件，是material design设计中fab的官方实现。</p>
 <p>此控件的官方介绍如下：</p>
 <blockquote>
 <p>Floating action buttons are used for a promoted action. They are distinguished by a circled icon floating above the UI and have motion behaviors that include morphing, launching, and a transferring anchor point.</p>
@@ -398,16 +408,20 @@
 <p>微博：<a href="http://weibo.com/u/2331178381?is_all=1" target="_blank" rel="external">楚奕RX</a></p>
 <h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">The MIT License (MIT)</div><div class="line"></div><div class="line">Copyright (c) 2016 Rowandjj</div><div class="line"></div><div class="line">Permission is hereby granted, free of charge, to any person obtaining a copy</div><div class="line">of this software and associated documentation files (the &quot;Software&quot;), to deal</div><div class="line">in the Software without restriction, including without limitation the rights</div><div class="line">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</div><div class="line">copies of the Software, and to permit persons to whom the Software is</div><div class="line">furnished to do so, subject to the following conditions:</div><div class="line"></div><div class="line">The above copyright notice and this permission notice shall be included in all</div><div class="line">copies or substantial portions of the Software.</div><div class="line"></div><div class="line">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</div><div class="line">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</div><div class="line">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</div><div class="line">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</div><div class="line">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</div><div class="line">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</div><div class="line">SOFTWARE.</div></pre></td></tr></table></figure>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -415,189 +429,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/08/28/总结2015-展望2016/" rel="next" title="总结2015 展望2016">
+                <i class="fa fa-chevron-left"></i> 总结2015 展望2016
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/08/28/总结2015-展望2016/" itemprop="url">
-                  总结2015 展望2016
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-28T22:24:16+08:00" content="2016-08-28">
-              2016-08-28
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/28/总结2015-展望2016/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/总结2015-展望2016/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="总结2015-展望2016"><a href="#总结2015-展望2016" class="headerlink" title="总结2015 展望2016"></a>总结2015 展望2016</h3><h4 id="2015总结"><a href="#2015总结" class="headerlink" title="2015总结"></a>2015总结</h4><h5 id="大事记"><a href="#大事记" class="headerlink" title="大事记:"></a>大事记:</h5><ol>
-<li>2015校招加入阿里巴巴，淘宝。上半年3-5月份实习两个月,7月份正式入职，10月份转正。虽然对正在做的业务不是很感兴趣，但是每天都能够学到很多知识，过得还算比较充实。</li>
-<li>7月，本科毕业,长安大学。对母校没有啥感情。唯一比较伤感的事是要和基友分开了。另外很开心的是室友们都找到了比较好的工作，希望他们发展的更好。</li>
-<li>毕业前与室友SX、CRJ来了一趟说走就走的旅行，去了甘肃敦煌、兰州、嘉峪关。毕业了，不留遗憾!</li>
-<li>与XL确定恋情。尼玛老子不是单身狗了。</li>
-<li>团建去了趟千岛湖。恩，酒店很高端。</li>
-<li>十一带父母在杭州玩，很嗨皮。尽孝要趁早。</li>
-</ol>
-<h5 id="技术上"><a href="#技术上" class="headerlink" title="技术上:"></a>技术上:</h5><ol>
-<li><a href="http://blog.csdn.net/chdjj" target="_blank" rel="external">博客</a>17篇，个人笔记123篇。学习之路贵在勤。</li>
-<li>工作需要，学习了<code>python</code>、<code>ReactNative</code>。学的不精，后面有待提升。</li>
-<li>境界有所提升。<ul>
-<li>看问题的角度比以前更深入，不仅知其然，而且尽量知其所以然。体现在阅读了一些业务以及开源组件的源码，并及时总结。</li>
-<li>面向对象、建模的能力有所提升。体现在做需求的时候能够先通过各种UML图进行设计,避免直接编码。另外编码过程中能够不断思考、重构，对设计模式也有了更深入的理解。</li>
-<li>搜索技术提升。google+stackoverflow+github+vpn运用的更加纯熟。不再使用baidu。</li>
-<li>能够自我驱动，自我学习,学会了构建知识体系。通过画思维导图，了解自身优缺点,并制定计划,查缺补漏。</li>
-</ul>
-</li>
-<li>android技能提升，基本能独立完成所有需求，另外能够实时关注android官方动态，比如IO大会、DEV SUMMIT、官方出的开发视频。</li>
-<li>学习了Rxjava、lambda等响应式编程相关内容。</li>
-<li>follow各路大神。通过微博、github、twitter、博客等多种途径关注大神动态。每天不定时刷新，同步。</li>
-</ol>
-<h5 id="开源贡献"><a href="#开源贡献" class="headerlink" title="开源贡献:"></a>开源贡献:</h5><p>惭愧，限于个人水平和业余时间，并没有拿的出手的作品，明年继续努力。</p>
-<h5 id="其他"><a href="#其他" class="headerlink" title="其他:"></a>其他:</h5><ol>
-<li>喜欢上markdown写作。在github上创建了<code>my_awesome_blog</code>仓库，用于写博客。</li>
-<li>最近颈椎有点不舒服，意识到健康问题。后面会开始运动健身。</li>
-<li>今年买了三部手机，魅族m4，nexus5，水果6s。目前nexus5作为开发机，水果6s打电话，魅族已废弃。</li>
-</ol>
-<h5 id="阅读"><a href="#阅读" class="headerlink" title="阅读:"></a>阅读:</h5><ol>
-<li>看完《effect java》,不仅能写出代码，还要能写出高质量的代码。</li>
-<li>看完《app研发录》,内容比较基础，技术干货不多。</li>
-<li>看《java并发编程实战》，20%。</li>
-<li>看《android源码设计模式》50%。</li>
-<li>看《android开发艺术探索》15%。</li>
-</ol>
-<h5 id="工具相关"><a href="#工具相关" class="headerlink" title="工具相关"></a>工具相关</h5><ol>
-<li>从windows迁移到macbook。目前开发机RMBP,I7,16GB内存。</li>
-<li>从Eclipse+ADT迁移到Android Studio。</li>
-<li>从NotePad++迁移到sublime,现在喜欢上了Atom。</li>
-<li>目前在用的软件:<ul>
-<li>IDE：AS、PyCharm、Eclipse</li>
-<li>VCS: Git,图形化工具:AS插件+SourceTree+ Github for mac</li>
-<li>写作: MacDown+Atom+wizNote</li>
-<li>终端: ohMyZsh</li>
-<li>文档管理: Dash</li>
-<li>UML建模:StarUML(大部分uml图)+Gliffy(仅流程图)</li>
-<li>浏览器:Chrome，插件:Gliffy/JSONEditor/二维码生成工具/微度标签页</li>
-<li>抓包:Charles</li>
-<li>设计:Sketch</li>
-<li>Sqlite图形化工具: Navicat</li>
-<li>java反编译:JDGUI</li>
-<li>思维导图:XMIND</li>
-<li>音乐:网易云音乐</li>
-</ul>
-</li>
-</ol>
-<h4 id="2016规划"><a href="#2016规划" class="headerlink" title="2016规划"></a>2016规划</h4><h5 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h5><ol>
-<li>深入学习python</li>
-<li>linux相关学习，为学习android framework打好基础</li>
-<li>android进阶,重点关注性能方面。多多阅读源码，多多做复杂的需求。</li>
-<li>web相关知识学习,TCP/IP、JS相关。</li>
-</ol>
-<h5 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h5><p> 希望有能拿的出手的作品</p>
-<h5 id="要看的书-技术相关"><a href="#要看的书-技术相关" class="headerlink" title="要看的书,技术相关"></a>要看的书,技术相关</h5><ol>
-<li>《android源码设计模式》、《adroid开发艺术探索》</li>
-<li>《http权威指南》</li>
-<li>《java并发编程实战》</li>
-<li>《python cookbook》</li>
-</ol>
-<h5 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h5><p> 运动、运动、运动</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -605,6 +462,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/28/FloatingActionButton源码解析/"
+           data-title="FloatingActionButton源码解析" data-url="http://yoursite.com/2016/08/28/FloatingActionButton源码解析/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -624,8 +489,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avata.jpg"
@@ -661,6 +535,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FloatingActionButton源码解析"><span class="nav-number">1.</span> <span class="nav-text">FloatingActionButton源码解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.2.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-fab的自定义属性、背景着色相关"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. fab的自定义属性、背景着色相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-fab的大小"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. fab的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-fab的动画"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.fab的动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-fab与CoordinatorLayout的交互"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. fab与CoordinatorLayout的交互</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">1.3.</span> <span class="nav-text">License</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -773,6 +658,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
